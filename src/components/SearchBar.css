@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     color: white;
 }
 
@@ -33,4 +34,35 @@
     font-size: 20px;
     outline: none;
     margin: 0 20px;
+}
+
+.movies{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: white;
+    padding-top: 20px;
+    margin-bottom: 40px;
+}
+
+.movie__skeleton{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: calc(90%/3);
+    height: 100%;
+    padding: 24px 0px;
+    margin: 12px 12px;
+    border: 1px solid #5A5A5A;
+    transition: all 300ms ease;
+    cursor: not-allowed;
+    background-color: #5A5A5A;
+}
+
+.poster__skeleton{
+    width: 224px;
+    height: 350px;
+    border: 1px solid #5A5A5A;
+    background-color: #5A5A5A;
 }

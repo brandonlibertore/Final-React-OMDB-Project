@@ -1,0 +1,41 @@
+.movie{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: calc(90%/3);
+    padding: 24px 0px;
+    margin: 12px 12px;
+    border: 1px solid white;
+    transition: all 300ms ease;
+    cursor: not-allowed;
+}
+
+.movie:hover{
+    transform: scale(1.05);
+    box-shadow: 0 12px 36px grey;
+}
+
+.poster{
+    display: flex;
+    align-items: center;
+    max-width: 224px;
+    max-height: 350px;
+}
+
+.poster__img{
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+}
+
+.left__align{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 24px;
+}
+
+.movie__title, .movie__year, .movie__type{
+    font-size: 18px;
+}
