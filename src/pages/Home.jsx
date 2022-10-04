@@ -1,12 +1,12 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import SearchBar from "../components/SearchBar";
+import HomeBody from "../components/HomeBody";
 
 export default function Home() {
   return (
     <div>
       <Navbar />
-      <SearchBar />
+      <HomeBody />
     </div>
   );
 }

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Selector from "./Selector";
 import Movie from "./Movie";
-import "./SearchBar.css";
+import "./HomeBody.css";
 
 // ICONS
 import SearchIcon from "@mui/icons-material/Search";
@@ -30,7 +30,7 @@ export default function SearchBar() {
   }, []);
 
   return (
-    <nav className="searchBar">
+    <div className="homeBody">
       <div className="column__search">
         <h1>Browse Our Movies</h1>
         <div
@@ -76,6 +76,6 @@ export default function SearchBar() {
               ))
               .slice(0, 6)}
       </div>
-    </nav>
+    </div>
   );
 }
