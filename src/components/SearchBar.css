@@ -1,0 +1,36 @@
+.searchBar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.column__search{
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.input__container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    border: 1px solid white;
+    border-radius: 9999px;
+    margin-top: 20px;
+    padding: 12px;
+}
+
+.input__movies{
+    margin-right: 30px;
+    flex: 1;
+    border: none;
+    color: white;
+    font-size: 20px;
+    outline: none;
+    margin: 0 20px;
+}
