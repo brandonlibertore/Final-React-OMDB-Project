@@ -101,7 +101,7 @@ export default function SearchBar() {
               setQuery(event.target.value);
             }}
           />
-          <SearchIcon />
+          <SearchIcon onClick={() => searchMovie()} className="search__icon" />
         </div>
       </div>
       <div className="selector">

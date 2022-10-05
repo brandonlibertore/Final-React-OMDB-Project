@@ -5,7 +5,10 @@ export default function Movie({ title, year, movieType, poster }) {
   return (
     <>
       {poster !== "N/A" ? (
-        <div className="movie">
+        <div
+          className="movie"
+          onClick={() => alert("The Feature Has Not Been Implemented")}
+        >
           <figure className="poster">
             {<img className="poster__img" src={poster} />}
           </figure>
@@ -16,7 +19,10 @@ export default function Movie({ title, year, movieType, poster }) {
           </div>
         </div>
       ) : (
-        <div className="movie__empty">
+        <div
+          className="movie__empty"
+          onClick={() => alert("The Feature Has Not Been Implemented")}
+        >
           <figure className="poster__empty">
             {<img className="poster__img--empty" src={poster} alt="N/A" />}
           </figure>

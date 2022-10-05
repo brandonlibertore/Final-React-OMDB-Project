@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import PersonalLogo from "../assets/B_Monogram.png";
 import "./Navbar.css";
 
@@ -10,9 +11,18 @@ export default function Navbar() {
           <img src={PersonalLogo} alt="Logo" className="logo__img" />
         </figure>
         <ul className="nav__link--list">
-          <li className="nav__link">Home</li>
-          <li className="nav__link">Find Your Movie</li>
-          <li className="nav__link">Contact</li>
+          <Link to="/" className="nav__link--wrapper">
+            <li className="nav__link">Home</li>
+          </Link>
+          <Link to="/" className="nav__link--wrapper">
+            <li className="nav__link">Find Your Movie</li>
+          </Link>
+          <li
+            className="nav__link no-cursor"
+            onClick={() => alert("The Feature Has Not Been Implemented")}
+          >
+            Contact
+          </li>
         </ul>
       </div>
     </div>

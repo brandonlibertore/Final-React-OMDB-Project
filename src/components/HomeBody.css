@@ -36,6 +36,10 @@
     margin: 0 20px;
 }
 
+.search__icon{
+    cursor: pointer;
+}
+
 .movies{
     display: flex;
     justify-content: center;

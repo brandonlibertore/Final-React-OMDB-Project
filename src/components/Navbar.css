@@ -26,11 +26,18 @@ NAVBAR
     justify-content: center;
 }
 
+.nav__link--wrapper{
+    text-decoration: none;
+}
+
 .nav__link{
     padding: 0 24px;
     list-style: none;
     font-size: 20px;
     font-weight: bold;
     color: white;
+}
+
+.no-cursor{
     cursor: not-allowed;
 }
