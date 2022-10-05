@@ -1,23 +1,23 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Movie.css";
 
-export default function Movie({ title, year, movieType, poster }) {
+export default function Movie({ id, title, year, movieType, poster }) {
   return (
     <>
       {poster !== "N/A" ? (
-        <div
-          className="movie"
-          onClick={() => alert("The Feature Has Not Been Implemented")}
-        >
-          <figure className="poster">
-            {<img className="poster__img" src={poster} />}
-          </figure>
-          <div className="left__align">
-            <h3 className="movie__title">{title}</h3>
-            <h3 className="movie__year">{year}</h3>
-            <h3 className="movie__type">{movieType}</h3>
+        <Link to={`/${id}`} className="movie">
+          <div>
+            <figure className="poster">
+              {<img className="poster__img" src={poster} alt="" />}
+            </figure>
+            <div className="left__align">
+              <h3 className="movie__title">{title}</h3>
+              <h3 className="movie__year">{year}</h3>
+              <h3 className="movie__type">{movieType}</h3>
+            </div>
           </div>
-        </div>
+        </Link>
       ) : (
         <div
           className="movie__empty"
