@@ -5,6 +5,8 @@ import "./Navbar.css";
 
 // ICONS
 import Brightness1TwoToneIcon from "@mui/icons-material/Brightness1TwoTone";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 
 export default function Navbar() {
   const [toggle, setToggle] = useState(false);
@@ -16,6 +18,14 @@ export default function Navbar() {
     } else {
       document.body.classList.remove("white-theme");
     }
+  }
+
+  function openMenu() {
+    document.body.classList += " menu--open";
+  }
+
+  function closeMenu() {
+    document.body.classList.remove("menu--open");
   }
 
   return (
@@ -46,6 +56,28 @@ export default function Navbar() {
             />
           </li>
         </ul>
+        <MenuIcon className="small__devices" onClick={() => openMenu()} />
+        <div class="menu__backdrop">
+          <CloseIcon
+            className="btn__menu btn__menu--close no-cursor"
+            onClick={() => closeMenu()}
+          />
+          <ul className="menu__links">
+            <li className="menu__list">
+              <Link to="/" className="menu__link" onClick={() => closeMenu()}>
+                Home
+              </Link>
+            </li>
+            <li className="menu__list">
+              <Link to="/" className="menu__link" onClick={() => closeMenu()}>
+                Find Your Movie
+              </Link>
+            </li>
+            <li className="menu__list">
+              <Link className="menu__link no-cursor">Contact</Link>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );
