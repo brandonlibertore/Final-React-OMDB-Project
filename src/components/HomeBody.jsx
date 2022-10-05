@@ -35,14 +35,19 @@ export default function SearchBar() {
   function filterMovies(data) {
     if (filter == "ASC_ALP") {
       setMovies(data.sort((a, b) => (a.Title > b.Title ? 1 : -1)));
+      setMoviesSlice(data.sort((a, b) => (a.Title > b.Title ? 1 : -1)));
     } else if (filter == "DESC_ALP") {
       setMovies(data.sort((a, b) => (a.Title > b.Title ? -1 : 1)));
+      setMoviesSlice(data.sort((a, b) => (a.Title > b.Title ? -1 : 1)));
     } else if (filter == "ASC_YEAR") {
       setMovies(data.sort((a, b) => (a.Year > b.Year ? 1 : -1)));
+      setMoviesSlice(data.sort((a, b) => (a.Year > b.Year ? 1 : -1)));
     } else if (filter == "DESC_YEAR") {
       setMovies(data.sort((a, b) => (a.Year > b.Year ? -1 : 1)));
+      setMoviesSlice(data.sort((a, b) => (a.Year > b.Year ? -1 : 1)));
     } else {
       setMovies(data);
+      setMoviesSlice(data);
     }
   }
 
@@ -50,15 +55,13 @@ export default function SearchBar() {
     searchMovie();
   }, [filter]);
 
-  useEffect(() => {
-    console.log(currentPage);
-  }, [currentPage]);
+  useEffect(() => {}, [moviesSlice]);
 
   function changePageLeft() {
     if (currentPage > 1) {
       setMoviesSlice(movies);
       const nextPage = currentPage;
-      currentPage -= 1;
+      setCurrentPage(currentPage - 1);
       const startIndex = currentPage == 1 ? 0 * 6 : currentPage * 6;
       const EndIndex = currentPage == 1 ? 1 * 6 : nextPage * 6;
       if (moviesSlice.slice(startIndex, EndIndex).length > 0) {
@@ -69,16 +72,13 @@ export default function SearchBar() {
 
   function changePageRight() {
     if (currentPage >= 1) {
-      console.log(movies);
-      setMoviesSlice(movies);
-      console.log(moviesSlice);
-      // const lastPage = currentPage;
-      // const startIndex = lastPage * 6;
-      // const EndIndex = (currentPage + 1) * 6;
-      // setCurrentPage(currentPage + 1);
-      // if (moviesSlice.slice(startIndex, EndIndex).length > 0) {
-      //   setMoviesSlice(movies.slice(startIndex, EndIndex));
-      // }
+      const lastPage = currentPage;
+      const startIndex = lastPage * 6;
+      const EndIndex = (currentPage + 1) * 6;
+      if (movies.slice(startIndex, EndIndex).length > 0) {
+        setMoviesSlice(movies.slice(startIndex, EndIndex));
+        setCurrentPage(currentPage + 1);
+      }
     }
   }
 
@@ -151,7 +151,7 @@ export default function SearchBar() {
             </div>
           ))
         ) : (
-          movies
+          moviesSlice
             .map((movie) => (
               <Movie
                 key={movie.imdbID}
