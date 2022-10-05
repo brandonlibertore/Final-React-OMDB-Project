@@ -41,3 +41,19 @@ NAVBAR
 .no-cursor{
     cursor: not-allowed;
 }
+
+.toggle{
+    cursor: pointer;
+}
+
+.theme{
+    transition: all 300ms ease;
+}
+
+.theme:hover{
+    transform: scale(1.1);
+}
+
+.theme:active{
+    transform: scale(0.9);
+}

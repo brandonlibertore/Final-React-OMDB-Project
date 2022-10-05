@@ -4,3 +4,23 @@
   background-color: #242424;
   font-family: "Montserrat", "lato";
 }
+
+.white-theme{
+  filter: invert(100%);
+  background-color: white;
+}
+
+.white-theme .home__page--img{
+  filter: invert(100%);
+  background-color: #dbdbdb;
+}
+
+.white-theme .poster__img{
+  filter: invert(100%);
+}
+
+.white-theme select{
+  color: grey;
+  background-color: black;
+  border: none;
+}

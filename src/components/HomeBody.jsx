@@ -33,16 +33,16 @@ export default function SearchBar() {
   }
 
   function filterMovies(data) {
-    if (filter == "ASC_ALP") {
+    if (filter === "ASC_ALP") {
       setMovies(data.sort((a, b) => (a.Title > b.Title ? 1 : -1)));
       setMoviesSlice(data.sort((a, b) => (a.Title > b.Title ? 1 : -1)));
-    } else if (filter == "DESC_ALP") {
+    } else if (filter === "DESC_ALP") {
       setMovies(data.sort((a, b) => (a.Title > b.Title ? -1 : 1)));
       setMoviesSlice(data.sort((a, b) => (a.Title > b.Title ? -1 : 1)));
-    } else if (filter == "ASC_YEAR") {
+    } else if (filter === "ASC_YEAR") {
       setMovies(data.sort((a, b) => (a.Year > b.Year ? 1 : -1)));
       setMoviesSlice(data.sort((a, b) => (a.Year > b.Year ? 1 : -1)));
-    } else if (filter == "DESC_YEAR") {
+    } else if (filter === "DESC_YEAR") {
       setMovies(data.sort((a, b) => (a.Year > b.Year ? -1 : 1)));
       setMoviesSlice(data.sort((a, b) => (a.Year > b.Year ? -1 : 1)));
     } else {
@@ -62,8 +62,8 @@ export default function SearchBar() {
       setMoviesSlice(movies);
       const nextPage = currentPage;
       setCurrentPage(currentPage - 1);
-      const startIndex = currentPage == 1 ? 0 * 6 : currentPage * 6;
-      const EndIndex = currentPage == 1 ? 1 * 6 : nextPage * 6;
+      const startIndex = currentPage === 1 ? 0 * 6 : currentPage * 6;
+      const EndIndex = currentPage === 1 ? 1 * 6 : nextPage * 6;
       if (moviesSlice.slice(startIndex, EndIndex).length > 0) {
         setMoviesSlice(movies.slice(startIndex, EndIndex));
       }
@@ -138,7 +138,7 @@ export default function SearchBar() {
       </div>
       <div className="movies">
         {movies.length === 0 ? (
-          <img src={HomePageImg} />
+          <img src={HomePageImg} alt="" className="home__page--img" />
         ) : loading ? (
           new Array(6).fill(0).map((_, index) => (
             <div className="movie__skeleton" key={index}>
@@ -155,6 +155,7 @@ export default function SearchBar() {
             .map((movie) => (
               <Movie
                 key={movie.imdbID}
+                id={movie.imdbID}
                 title={movie.Title}
                 year={movie.Year}
                 movieType={movie.Type}
