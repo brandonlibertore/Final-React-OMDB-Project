@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Final-React-OMDB-Project/static/css/main.bab8240c.css",
+    "main.js": "/Final-React-OMDB-Project/static/js/main.e56dc372.js",
+    "static/js/787.d2303982.chunk.js": "/Final-React-OMDB-Project/static/js/787.d2303982.chunk.js",
+    "static/media/undraw_horror_movie_3988.svg": "/Final-React-OMDB-Project/static/media/undraw_horror_movie_3988.79a961f7bb9e3781ef6704c54e9ac9c5.svg",
+    "index.html": "/Final-React-OMDB-Project/index.html",
+    "main.bab8240c.css.map": "/Final-React-OMDB-Project/static/css/main.bab8240c.css.map",
+    "main.e56dc372.js.map": "/Final-React-OMDB-Project/static/js/main.e56dc372.js.map",
+    "787.d2303982.chunk.js.map": "/Final-React-OMDB-Project/static/js/787.d2303982.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bab8240c.css",
+    "static/js/main.e56dc372.js"
+  ]
+}
